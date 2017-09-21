@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+template<class Type>
+class Swapper
+{
+public:
+Type x, y;
+public:
+Swapper(Type x, Type y)
+{
+this->x = x;
+this->y = y;
+}
+void swap()
+{
+Type temp;
+temp = x;
+x = y;
+y = temp;
+}
+void display()
+{
+cout<<“x=”<<x<<“, y=”<<y<<endl;
+}
+};
+int main()
+{
+Swapper<int> iobj(10, 20);
+cout<<“Before swap:”<<endl;
+iobj.display();
+iobj.swap();
+cout<<“After swap:”<<endl;
+iobj.display();
+Swapper<float> fobj(10.3, 20.6);
+cout<<“Before swap:”<<endl;
+fobj.display();
+fobj.swap();
+cout<<“After swap:”<<endl;
+fobj.display();
+return 0;
+}
