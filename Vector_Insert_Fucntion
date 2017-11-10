@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	vector <int> gquiz1(3, 10);
+	vector <int> :: iterator it;
+	
+	cout << "gquiz1 contains 1: ";
+	for (it = gquiz1.begin(); it < gquiz1.end(); it++)
+		cout << *it << "\t";
+
+	it = gquiz1.insert(it, 20);
+	
+	cout << "\ngquiz1 contains 2: ";
+	for (it = gquiz1.begin(); it < gquiz1.end(); it++)
+		cout << *it << "\t";
+	
+
+	gquiz1.insert(it, 2, 30);
+	cout << "\ngquiz1 contains 3: ";
+	for (it = gquiz1.begin(); it < gquiz1.end(); it++)
+		cout << *it << "\t";	
+
+	it = gquiz1.begin();
+
+	vector <int> gquiz2(2, 40);
+	gquiz1.insert(it + 2, gquiz2.begin(), gquiz2.end());
+	cout << "\ngquiz1 contains 4: ";
+	for (it = gquiz1.begin(); it < gquiz1.end(); it++)
+		cout << *it << "\t";
+
+	int gq [] = {50, 60, 70};
+	gquiz1.insert(gquiz1.begin(), gq, gq + 3);
+
+	cout << "\ngquiz1 contains 5: ";
+	for (it = gquiz1.begin(); it < gquiz1.end(); it++)
+		cout << *it << '\t';
+
+	return 0;
+}
